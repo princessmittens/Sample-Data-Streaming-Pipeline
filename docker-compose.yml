@@ -1,0 +1,20 @@
+version: '3'
+services:
+  streamer:
+    build:
+     context: .
+     dockerfile: streamer
+    ports:
+      - 5000:5000
+  publisher:
+    build:
+     context: .
+     dockerfile: publisher
+    ports:
+        - 5001:5000
+  receiever:
+    build:
+     context: .
+     dockerfile: receiver
+    ports:
+        - 5002:5000
