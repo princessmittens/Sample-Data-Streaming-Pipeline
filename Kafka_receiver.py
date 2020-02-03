@@ -5,13 +5,10 @@ import datetime
 import json
 from collections import defaultdict
 
-def run_get_request(prices):
+def run_get_request():
     '''
     Sends a get request to the kafka streamer and retrives the stock values every 30 seconds
     Prints the average values over time.
-
-    Args:
-        prices dictionary that records the prices
     '''
     # Reruns function every 0.1 seconds
     threading.Timer(30, run_get_request).start()
@@ -28,4 +25,4 @@ def run_get_request(prices):
 prices = defaultdict(list)
 
 print("Starting the Kafka Receiver")
-run_get_request(prices)
+run_get_request()
