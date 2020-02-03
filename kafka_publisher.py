@@ -22,5 +22,5 @@ def run_post_request():
     request_resp = requests.post("http://streamer:5000/stocks", json=stock_dict)
     print("Posting data to stocks streamer: " + str(request_resp))
 
-print("Starting Publisher")
+print("Starting the Kafka Publisher")
 run_post_request()
